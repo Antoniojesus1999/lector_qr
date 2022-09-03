@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lector_qr/pages/home_page.dart';
 import 'package:lector_qr/pages/mapa_page.dart';
+import 'package:lector_qr/providers/ui_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(const MyApp());
 
@@ -9,16 +11,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'QA Reader',
-      initialRoute: 'home',
-      routes: {
-        'home': (_) => const HomePage(),
-        'mapa': (_) => MapaPage(),
-      },
-      //primarySwatch para cambiar el color de todo el tema
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
+    //Gestor de estado
+    return MultiProvider(
+      providers: [
+        //Indicamos que clase extiende de ChangeNotifier y lo inicializamos
+        ChangeNotifierProvider(create: (_) => UiProvider())
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'QA Reader',
+        initialRoute: 'home',
+        routes: {
+          'home': (_) => const HomePage(),
+          'mapa': (_) => MapaPage(),
+        },
+        //primarySwatch para cambiar el color de todo el tema
+        theme: ThemeData(primarySwatch: Colors.deepPurple),
+      ),
     );
   }
 }
