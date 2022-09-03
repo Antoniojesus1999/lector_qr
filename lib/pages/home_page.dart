@@ -9,8 +9,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Center(child: Text('Historial')),
+          title: const Text('Historial'),
           elevation: 0,
+          centerTitle: true,
           actions: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.delete_forever))
           ]),

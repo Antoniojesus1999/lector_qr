@@ -14,9 +14,11 @@ class MyApp extends StatelessWidget {
       title: 'QA Reader',
       initialRoute: 'home',
       routes: {
-        'home': (_) => HomePage(),
+        'home': (_) => const HomePage(),
         'mapa': (_) => MapaPage(),
       },
+      //primarySwatch para cambiar el color de todo el tema
+      theme: ThemeData(primarySwatch: Colors.deepPurple),
     );
   }
 }
