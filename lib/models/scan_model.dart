@@ -1,12 +1,14 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
+
 class ScanModel {
   ScanModel({
     this.id,
-    required this.tipo,
+    this.tipo,
     required this.valor,
   }) {
-    if (tipo.contains('http')) {
+    if (valor.contains('http')) {
       tipo = 'http';
     } else {
       tipo = 'geo';
@@ -14,7 +16,7 @@ class ScanModel {
   }
 
   int? id;
-  String tipo;
+  String? tipo;
   String valor;
 
   factory ScanModel.fromJson(String str) => ScanModel.fromMap(json.decode(str));
