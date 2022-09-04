@@ -38,7 +38,7 @@ class _HomePageBody extends StatelessWidget {
     //supuesta mente muestra el id
     //final intTemp = DBProvider.db.nuevoScan(temp);
     //DBProvider.db.getScanById(1).then((scan) => print(scan?.valor));
-    DBProvider.db.deleteAllScans().then(print);
+    //DBProvider.db.deleteAllScans().then(print);
 
     switch (currentIndex) {
       case 0:
