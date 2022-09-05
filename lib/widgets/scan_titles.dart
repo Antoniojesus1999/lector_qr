@@ -3,8 +3,9 @@ import 'package:provider/provider.dart';
 
 import '../providers/scan_list_provider.dart';
 
-class MapasPage extends StatelessWidget {
-  const MapasPage({super.key});
+class ScanTitles extends StatelessWidget {
+  final String tipo;
+  const ScanTitles({required this.tipo});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class MapasPage extends StatelessWidget {
               },
               child: ListTile(
                 leading: Icon(
-                  Icons.map,
+                  tipo == 'http' ? Icons.home_outlined : Icons.map,
                   color: Theme.of(context).primaryColor,
                 ),
                 title: Text(scans[i].valor),
