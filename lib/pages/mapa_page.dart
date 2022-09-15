@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:lector_qr/widgets/scan_titles.dart';
 
