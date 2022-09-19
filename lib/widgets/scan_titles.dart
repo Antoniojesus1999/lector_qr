@@ -6,7 +6,7 @@ import '../utils/utils.dart';
 
 class ScanTitles extends StatelessWidget {
   final String tipo;
-  const ScanTitles({required this.tipo});
+  const ScanTitles({super.key, required this.tipo});
 
   @override
   Widget build(BuildContext context) {

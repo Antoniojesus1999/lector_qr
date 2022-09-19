@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:lector_qr/models/scan_model.dart';
 export 'package:lector_qr/models/scan_model.dart';
 import 'package:path/path.dart';
-import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -22,7 +21,9 @@ class DBProvider {
   Future<Database> initDB() async {
     Directory documentsDirectory = await getApplicationSupportDirectory();
     final path = join(documentsDirectory.path, 'ScansDB.db');
-    print(path);
+    if (kDebugMode) {
+      print(path);
+    }
 
     return await openDatabase(path, version: 1, onOpen: (db) {},
         onCreate: (Database db, int version) async {

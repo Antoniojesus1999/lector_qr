@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lector_qr/pages/direcciones_page.dart';
 import 'package:lector_qr/pages/mapas_page.dart';
-import 'package:lector_qr/providers/db_provider.dart';
 import 'package:lector_qr/providers/scan_list_provider.dart';
 import 'package:lector_qr/providers/ui_provider.dart';
 import 'package:lector_qr/widgets/custom_navigator_bar.dart';
