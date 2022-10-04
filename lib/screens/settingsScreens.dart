@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lector_qr/providers/theme_provider.dart';
 import 'package:lector_qr/share_preferences/preferences.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/side_menu.dart';
 
@@ -36,6 +38,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     title: const Text('Darkmode'),
                     onChanged: (value) {
                       Preferences.isDarkmode = value;
+                      final themeProvider =
+                          Provider.of<ThemeProvider>(context, listen: false);
+                      value
+                          ? themeProvider.setDarkMode()
+                          : themeProvider.setLightMode();
                       setState(() {});
                     }),
                 const Divider(),
