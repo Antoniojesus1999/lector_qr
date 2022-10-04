@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lector_qr/share_preferences/preferences.dart';
 import 'package:lector_qr/widgets/side_menu.dart';
 
 class ThemePage extends StatelessWidget {
@@ -13,13 +14,13 @@ class ThemePage extends StatelessWidget {
       drawer: const SideMenu(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Text('isDarkmode'),
-          Divider(),
-          Text('Género: '),
-          Divider(),
-          Text('Nombre de usuario:'),
-          Divider()
+        children: [
+          Text('isDarkmode: ${Preferences.isDarkmode}'),
+          const Divider(),
+          Text('Género: ${Preferences.gender}'),
+          const Divider(),
+          Text('Nombre de usuario:${Preferences.name}'),
+          const Divider()
         ],
       ),
     );

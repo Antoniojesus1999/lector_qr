@@ -224,6 +224,54 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "shared_preferences",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-2.0.15",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "shared_preferences_android",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_android-2.0.13",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "shared_preferences_ios",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_ios-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "shared_preferences_linux",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_linux-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "shared_preferences_macos",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-2.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "shared_preferences_platform_interface",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_platform_interface-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "shared_preferences_web",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_web-2.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "shared_preferences_windows",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_windows-2.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -362,7 +410,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-10-01T17:00:03.122661Z",
+  "generated": "2022-10-04T21:25:44.875865Z",
   "generator": "pub",
   "generatorVersion": "2.18.1"
 }

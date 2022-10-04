@@ -5,9 +5,15 @@ import 'package:lector_qr/pages/theme_page.dart';
 import 'package:lector_qr/providers/scan_list_provider.dart';
 import 'package:lector_qr/providers/ui_provider.dart';
 import 'package:lector_qr/screens/settingsScreens.dart';
+import 'package:lector_qr/share_preferences/preferences.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  //Sirve para cargar la clase Preferencia para guardar datos siempre y la linea de arriba es para que no pete
+  await Preferences.init();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
