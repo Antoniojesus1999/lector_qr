@@ -10,10 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae56216c-3324-4bd5-837a-6b2fbceb1f53" name="Changes" comment="scan list">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/scan_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/scan_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/mapa_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/mapa_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/scan_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/scan_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

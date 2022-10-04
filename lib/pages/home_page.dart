@@ -5,6 +5,7 @@ import 'package:lector_qr/providers/scan_list_provider.dart';
 import 'package:lector_qr/providers/ui_provider.dart';
 import 'package:lector_qr/widgets/custom_navigator_bar.dart';
 import 'package:lector_qr/widgets/scan_button.dart';
+import 'package:lector_qr/widgets/side_menu.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
@@ -26,6 +27,7 @@ class HomePage extends StatelessWidget {
                 },
                 icon: const Icon(Icons.delete_forever))
           ]),
+      drawer: const SideMenu(),
       body: _HomePageBody(),
       bottomNavigationBar: const CustomNaviagtorBar(),
       floatingActionButton: const ScanButton(),
