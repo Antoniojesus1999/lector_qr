@@ -46,11 +46,11 @@ class _HomePageBody extends StatelessWidget {
     switch (currentIndex) {
       case 0:
         scanListProvider.cargarScanPortTipo('geo');
-        return MapasPage();
+        return const MapasPage();
       default:
         scanListProvider.cargarScanPortTipo('http');
 
-        return DireccionesPages();
+        return const DireccionesPages();
     }
   }
 }

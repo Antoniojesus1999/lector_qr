@@ -5,6 +5,7 @@ import 'package:lector_qr/pages/theme_page.dart';
 import 'package:lector_qr/providers/scan_list_provider.dart';
 import 'package:lector_qr/providers/theme_provider.dart';
 import 'package:lector_qr/providers/ui_provider.dart';
+import 'package:lector_qr/screens/login_screen.dart';
 import 'package:lector_qr/screens/settingsScreens.dart';
 import 'package:lector_qr/share_preferences/preferences.dart';
 import 'package:provider/provider.dart';
@@ -37,12 +38,13 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'QA Reader',
-        initialRoute: 'home',
+        initialRoute: 'login',
         routes: {
           'home': (_) => const HomePage(),
           'mapa': (_) => MapaPage(),
           'theme': (_) => const ThemePage(),
           SettingsScreen.routerName: (_) => SettingsScreen(),
+          'login': (_) => LoginScreen()
         },
         //primarySwatch para cambiar el color de todo el tema
         theme: Provider.of<ThemeProvider>(context).currentTheme,
