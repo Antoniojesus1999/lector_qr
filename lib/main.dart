@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lector_qr/pages/home_page.dart';
 import 'package:lector_qr/pages/mapa_page.dart';
+import 'package:lector_qr/pages/product_page.dart';
 import 'package:lector_qr/pages/theme_page.dart';
 import 'package:lector_qr/providers/scan_list_provider.dart';
 import 'package:lector_qr/providers/theme_provider.dart';
@@ -38,16 +39,23 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'QA Reader',
-        initialRoute: 'login',
+        initialRoute: 'productos',
         routes: {
           'home': (_) => const HomePage(),
           'mapa': (_) => MapaPage(),
           'theme': (_) => const ThemePage(),
           SettingsScreen.routerName: (_) => SettingsScreen(),
-          'login': (_) => LoginScreen()
+          'login': (_) => const LoginScreen(),
+          'productos': (_) => const ProductPage(),
         },
         //primarySwatch para cambiar el color de todo el tema
-        theme: Provider.of<ThemeProvider>(context).currentTheme,
+        theme: Provider.of<ThemeProvider>(context).currentTheme.copyWith(
+            scaffoldBackgroundColor: const Color.fromARGB(255, 247, 255, 254),
+            appBarTheme: const AppBarTheme(
+                elevation: 0, color: Color.fromARGB(255, 31, 255, 195)),
+            floatingActionButtonTheme: const FloatingActionButtonThemeData(
+                backgroundColor: Color.fromARGB(255, 0, 254, 216),
+                elevation: 0)),
       ),
     );
   }
