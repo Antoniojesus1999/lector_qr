@@ -7,7 +7,9 @@ import 'package:lector_qr/providers/scan_list_provider.dart';
 import 'package:lector_qr/providers/theme_provider.dart';
 import 'package:lector_qr/providers/ui_provider.dart';
 import 'package:lector_qr/screens/login_screen.dart';
+import 'package:lector_qr/screens/product_screen.dart';
 import 'package:lector_qr/screens/settingsScreens.dart';
+import 'package:lector_qr/services/products_service.dart';
 import 'package:lector_qr/share_preferences/preferences.dart';
 import 'package:provider/provider.dart';
 
@@ -18,7 +20,11 @@ void main() async {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(
-          create: (_) => ThemeProvider(isDarkmode: Preferences.isDarkmode))
+          create: (_) => ThemeProvider(isDarkmode: Preferences.isDarkmode)),
+      ChangeNotifierProvider(
+        create: (_) => ProductsService(),
+        lazy: true,
+      )
     ],
     child: const MyApp(),
   ));
@@ -47,6 +53,7 @@ class MyApp extends StatelessWidget {
           SettingsScreen.routerName: (_) => SettingsScreen(),
           'login': (_) => const LoginScreen(),
           'productos': (_) => const ProductPage(),
+          'product': (_) => ProductScreen(),
         },
         //primarySwatch para cambiar el color de todo el tema
         theme: Provider.of<ThemeProvider>(context).currentTheme.copyWith(

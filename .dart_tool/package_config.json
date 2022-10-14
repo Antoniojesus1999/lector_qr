@@ -93,25 +93,37 @@
     },
     {
       "name": "google_maps_flutter",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-2.2.0",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-2.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
     {
       "name": "google_maps_flutter_android",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter_android-2.3.0",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter_android-2.3.2",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
     {
       "name": "google_maps_flutter_ios",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter_ios-2.1.11",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter_ios-2.1.12",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
     {
       "name": "google_maps_flutter_platform_interface",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter_platform_interface-2.2.2",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter_platform_interface-2.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -189,13 +201,13 @@
     },
     {
       "name": "path_provider_platform_interface",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_platform_interface-2.0.4",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_platform_interface-2.0.5",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "path_provider_windows",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.1.2",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.1.3",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -207,7 +219,7 @@
     },
     {
       "name": "plugin_platform_interface",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.1.2",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.1.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -219,7 +231,7 @@
     },
     {
       "name": "provider",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.3",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -231,7 +243,7 @@
     },
     {
       "name": "shared_preferences_android",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_android-2.0.13",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_android-2.0.14",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
@@ -285,13 +297,13 @@
     },
     {
       "name": "sqflite",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.3+1",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.1.0+1",
       "packageUri": "lib/",
-      "languageVersion": "2.16"
+      "languageVersion": "2.18"
     },
     {
       "name": "sqflite_common",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite_common-2.2.1+1",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite_common-2.3.0",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
@@ -309,9 +321,9 @@
     },
     {
       "name": "stream_transform",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/stream_transform-2.0.0",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/stream_transform-2.0.1",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.14"
     },
     {
       "name": "string_scanner",
@@ -338,14 +350,20 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "typed_data",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "url_launcher",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.1.5",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.1.6",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
     {
       "name": "url_launcher_android",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_android-6.0.17",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_android-6.0.19",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
@@ -369,7 +387,7 @@
     },
     {
       "name": "url_launcher_platform_interface",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_platform_interface-2.1.0",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_platform_interface-2.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -393,7 +411,7 @@
     },
     {
       "name": "win32",
-      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/win32-2.7.0",
+      "rootUri": "file:///C:/Users/AntonioJesus/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/win32-3.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -410,7 +428,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-10-04T21:25:44.875865Z",
+  "generated": "2022-10-14T21:52:14.906901Z",
   "generator": "pub",
   "generatorVersion": "2.18.1"
 }

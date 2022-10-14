@@ -52,7 +52,13 @@ class _NotAvailable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: FittedBox(
+      width: 100,
+      height: 70,
+      decoration: BoxDecoration(
+          color: Colors.yellow[800],
+          borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(25), bottomRight: Radius.circular(25))),
+      child: const FittedBox(
         fit: BoxFit.contain,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 10),
@@ -62,12 +68,6 @@ class _NotAvailable extends StatelessWidget {
           ),
         ),
       ),
-      width: 100,
-      height: 70,
-      decoration: BoxDecoration(
-          color: Colors.yellow[800],
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(25), bottomRight: Radius.circular(25))),
     );
   }
 }
@@ -154,12 +154,12 @@ class _BackgroundImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(25),
-      child: Container(
+      child: const SizedBox(
         width: double.infinity,
         height: 400,
-        child: const FadeInImage(
+        child: FadeInImage(
             placeholder: AssetImage('assets/loading.gif'),
-            image: NetworkImage('https://via.placeholder.com/400x300/f6f6f6'),
+            image: AssetImage('assets/loading.gif'),
             fit: BoxFit.cover),
       ),
     );
