@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:lector_qr/models/bicis_model.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+  final Bicis bici;
+  const ProductCard({super.key, required this.bici});
 
   @override
   Widget build(BuildContext context) {
@@ -14,19 +16,20 @@ class ProductCard extends StatelessWidget {
         decoration: _cardBorders(),
         child: Stack(
           alignment: Alignment.bottomRight,
-          children: const [
-            _BackgroundImage(),
-            _ProductDetails(),
+          children: [
+            _BackgroundImage(url: bici.imagen),
+            _ProductDetails(title: bici.nombre, subTitle: bici.id!),
             Positioned(
               top: 0,
               right: 0,
-              child: _PriceTag(),
+              child: _PriceTag(bici.precio),
             ),
-            Positioned(
-              top: 0,
-              left: 0,
-              child: _NotAvailable(),
-            )
+            if (!bici.disponible)
+              const Positioned(
+                top: 0,
+                left: 0,
+                child: _NotAvailable(),
+              )
           ],
         ),
       ),
@@ -34,7 +37,7 @@ class ProductCard extends StatelessWidget {
   }
 
   BoxDecoration _cardBorders() => BoxDecoration(
-          color: Colors.red,
+          color: Colors.white,
           borderRadius: BorderRadius.circular(25),
           boxShadow: const [
             BoxShadow(
@@ -45,9 +48,7 @@ class ProductCard extends StatelessWidget {
 }
 
 class _NotAvailable extends StatelessWidget {
-  const _NotAvailable({
-    Key? key,
-  }) : super(key: key);
+  const _NotAvailable({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -73,9 +74,8 @@ class _NotAvailable extends StatelessWidget {
 }
 
 class _PriceTag extends StatelessWidget {
-  const _PriceTag({
-    Key? key,
-  }) : super(key: key);
+  final double precio;
+  const _PriceTag(this.precio);
 
   @override
   Widget build(BuildContext context) {
@@ -88,13 +88,13 @@ class _PriceTag extends StatelessWidget {
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(25), bottomLeft: Radius.circular(25))),
       //FittedBox contain es para que solo este en una linea el contenido
-      child: const FittedBox(
+      child: FittedBox(
         fit: BoxFit.contain,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Text(
-            '\$102.99999999',
-            style: TextStyle(color: Colors.white, fontSize: 20),
+            '\$$precio',
+            style: const TextStyle(color: Colors.white, fontSize: 20),
           ),
         ),
       ),
@@ -103,9 +103,12 @@ class _PriceTag extends StatelessWidget {
 }
 
 class _ProductDetails extends StatelessWidget {
+  final String title;
+  final String subTitle;
   const _ProductDetails({
-    Key? key,
-  }) : super(key: key);
+    required this.title,
+    required this.subTitle,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -118,10 +121,10 @@ class _ProductDetails extends StatelessWidget {
         decoration: _buildBoxDecoration(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Text(
-              'Disco duro G',
-              style: TextStyle(
+              title,
+              style: const TextStyle(
                 fontSize: 20,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -130,8 +133,8 @@ class _ProductDetails extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
             Text(
-              'Id del disco duro',
-              style: TextStyle(fontSize: 12, color: Colors.white),
+              subTitle,
+              style: const TextStyle(fontSize: 12, color: Colors.white),
             ),
           ],
         ),
@@ -146,20 +149,23 @@ class _ProductDetails extends StatelessWidget {
 }
 
 class _BackgroundImage extends StatelessWidget {
+  final String? url;
+
   const _BackgroundImage({
     Key? key,
+    this.url,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(25),
-      child: const SizedBox(
+      child: SizedBox(
         width: double.infinity,
         height: 400,
         child: FadeInImage(
-            placeholder: AssetImage('assets/loading.gif'),
-            image: AssetImage('assets/loading.gif'),
+            placeholder: const AssetImage('assets/loading.gif'),
+            image: NetworkImage(url!),
             fit: BoxFit.cover),
       ),
     );

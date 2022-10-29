@@ -21,10 +21,7 @@ void main() async {
     providers: [
       ChangeNotifierProvider(
           create: (_) => ThemeProvider(isDarkmode: Preferences.isDarkmode)),
-      ChangeNotifierProvider(
-        create: (_) => ProductsService(),
-        lazy: true,
-      )
+      ChangeNotifierProvider(create: (_) => ProductsService())
     ],
     child: const MyApp(),
   ));
