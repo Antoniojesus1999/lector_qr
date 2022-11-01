@@ -10,7 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae56216c-3324-4bd5-837a-6b2fbceb1f53" name="Changes" comment="scan list">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widgets/product_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/product_card.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
