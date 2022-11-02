@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lector_qr/models/bicis_model.dart';
+import 'package:lector_qr/models/bici_model.dart';
 
 class ProductCard extends StatelessWidget {
-  final Bicis bici;
+  final Bici bici;
   const ProductCard({super.key, required this.bici});
 
   @override

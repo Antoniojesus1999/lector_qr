@@ -1,24 +1,25 @@
 import 'dart:convert';
 
-class Bicis {
-  Bicis({
-    required this.disponible,
-    this.imagen,
-    required this.nombre,
-    required this.precio,
-  });
-
+class Bici {
   String? id;
   bool disponible;
   String? imagen;
   String nombre;
   double precio;
 
-  factory Bicis.fromJson(String str) => Bicis.fromMap(json.decode(str));
+  Bici({
+    this.id,
+    required this.disponible,
+    this.imagen,
+    required this.nombre,
+    required this.precio,
+  });
+
+  factory Bici.fromJson(String str) => Bici.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
-  factory Bicis.fromMap(Map<String, dynamic> json) => Bicis(
+  factory Bici.fromMap(Map<String, dynamic> json) => Bici(
         disponible: json["disponible"],
         imagen: json["imagen"],
         nombre: json["nombre"],
@@ -31,4 +32,11 @@ class Bicis {
         "nombre": nombre,
         "precio": precio,
       };
+
+  Bici copy() => Bici(
+      disponible: disponible,
+      nombre: nombre,
+      precio: precio,
+      imagen: imagen,
+      id: id);
 }

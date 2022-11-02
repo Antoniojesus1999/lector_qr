@@ -18,7 +18,11 @@ class ProductPage extends StatelessWidget {
       body: ListView.builder(
           itemCount: productsService.bicis.length,
           itemBuilder: (BuildContext context, index) => GestureDetector(
-                onTap: () => Navigator.pushNamed(context, 'product'),
+                onTap: () {
+                  productsService.selectedBici =
+                      productsService.bicis[index].copy();
+                  Navigator.pushNamed(context, 'product');
+                },
                 child: ProductCard(bici: productsService.bicis[index]),
               )),
       floatingActionButton: FloatingActionButton(
