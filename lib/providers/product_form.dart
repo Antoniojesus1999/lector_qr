@@ -8,6 +8,11 @@ class ProductFormProvider extends ChangeNotifier {
 
   ProductFormProvider(this.bici);
 
+  updateAbilitar(bool value) {
+    bici.disponible = value;
+    notifyListeners();
+  }
+
   bool isValidForm() {
     return formKey.currentState?.validate() ?? false;
   }

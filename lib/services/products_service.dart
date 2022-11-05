@@ -9,6 +9,7 @@ class ProductsService extends ChangeNotifier {
   final List<Bici> bicis = [];
   Bici? selectedBici;
   bool isLoading = true;
+  bool isSaving = false;
 
   ProductsService() {
     loadProduct();
@@ -30,5 +31,34 @@ class ProductsService extends ChangeNotifier {
     isLoading = false;
     notifyListeners();
     return bicis;
+  }
+
+  Future saveOrCreateProduct(Bici bici) async {
+    isSaving = true;
+    notifyListeners();
+    if (bici.id == null) {
+    } else {
+      await updateProduct(bici);
+    }
+    isSaving = false;
+    notifyListeners();
+  }
+
+  Future<String> updateProduct(Bici bici) async {
+    final url = Uri.https(_baseUrl, '/bicis/${bici.id}.json');
+    final resp = await http.put(url, body: bici.toJson());
+    final decodedData = resp.body;
+    print(decodedData);
+
+    //TODO: Actualizar el listado de productos
+    /*for (var i = 0; i < bicis.length; i++) {
+      if (bicis[i].id == bici.id) {
+        bicis[i] = bici;
+      }
+    }*/
+    //Nueva forma
+    final index = bicis.indexWhere((element) => element.id == bici.id);
+    bicis[index] = bici;
+    return bici.id!;
   }
 }
