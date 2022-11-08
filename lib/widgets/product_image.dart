@@ -20,20 +20,10 @@ class ProductImage extends StatelessWidget {
                 child: Opacity(
                   opacity: 0.9,
                   child: ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(45),
-                        topRight: Radius.circular(45)),
-                    child: url == null
-                        ? const Image(
-                            image: AssetImage('assets/noimage.png'),
-                            fit: BoxFit.cover,
-                          )
-                        : FadeInImage(
-                            placeholder: const AssetImage('assets/loading.gif'),
-                            image: NetworkImage(url!),
-                            fit: BoxFit.cover,
-                          ),
-                  ),
+                      borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(45),
+                          topRight: Radius.circular(45)),
+                      child: getImage(url)),
                 ),
               ),
             ),
@@ -68,4 +58,24 @@ class ProductImage extends StatelessWidget {
                 blurRadius: 10,
                 offset: const Offset(0, 5))
           ]);
+
+  Widget getImage(String? imagen) {
+    if (imagen == null) {
+      return const Image(
+        image: AssetImage('assets/noimage.png'),
+        fit: BoxFit.cover,
+      );
+    }
+    if (imagen.startsWith('http')) {
+      return FadeInImage(
+        placeholder: const AssetImage('assets/loading.gif'),
+        image: NetworkImage(url!),
+        fit: BoxFit.cover,
+      );
+    }
+    return Image.file(
+      File(imagen),
+      fit: BoxFit.cover,
+    );
+  }
 }

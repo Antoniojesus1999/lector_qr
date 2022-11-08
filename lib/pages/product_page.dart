@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lector_qr/models/bici_model.dart';
 import 'package:lector_qr/screens/loading_screen.dart';
 import 'package:lector_qr/services/products_service.dart';
 import 'package:lector_qr/widgets/product_card.dart';
@@ -27,7 +28,11 @@ class ProductPage extends StatelessWidget {
               )),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          productsService.selectedBici =
+              Bici(disponible: true, nombre: '', precio: 0);
+          Navigator.pushNamed(context, 'product');
+        },
       ),
     );
   }

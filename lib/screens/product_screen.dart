@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:lector_qr/providers/product_form.dart';
 import 'package:lector_qr/services/products_service.dart';
 import 'package:lector_qr/ui/input_decorations.dart';
@@ -53,7 +54,19 @@ class _ProducScreenBody extends StatelessWidget {
                     top: 60,
                     right: 20,
                     child: IconButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          final picker = ImagePicker();
+                          final PickedFile? pickedFile = await picker.getImage(
+                              source: ImageSource.camera, imageQuality: 100);
+                          if (pickedFile == null) {
+                            print('No seleccionó nada');
+                            return;
+                          }
+
+                          print('Tenemos imagen ${pickedFile.path}');
+                          productsService
+                              .updateSelectedProductImage(pickedFile.path);
+                        },
                         icon: const Icon(
                           Icons.camera_enhance_outlined,
                           size: 40,
@@ -66,11 +79,17 @@ class _ProducScreenBody extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          if (!productForm.isValidForm()) return;
-          await productsService.saveOrCreateProduct(productForm.bici);
-        },
-        child: const Icon(Icons.save_outlined),
+        onPressed: productsService.isSaving
+            ? null
+            : () async {
+                if (!productForm.isValidForm()) return;
+                final String? imageUrl = await productsService.uploadImage();
+                if (imageUrl != null) productForm.bici.imagen = imageUrl;
+                await productsService.saveOrCreateProduct(productForm.bici);
+              },
+        child: productsService.isSaving
+            ? const CircularProgressIndicator(color: Colors.white)
+            : const Icon(Icons.save_outlined),
       ),
     );
   }
