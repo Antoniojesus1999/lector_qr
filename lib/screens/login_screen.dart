@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lector_qr/providers/login_form_provider.dart';
+import 'package:lector_qr/services/notification_service.dart';
 import 'package:lector_qr/ui/input_decorations.dart';
 import 'package:lector_qr/widgets/card_container.dart';
 import 'package:lector_qr/widgets/outh_background.dart';
@@ -121,6 +122,12 @@ class _LoginForm extends StatelessWidget {
                             Navigator.pushReplacementNamed(context, 'home');
                           } else {
                             print(errorMessage);
+                            if (errorMessage == 'EMAIL_NOT_FOUND') {
+                              NotificationService.showSSnackbar(
+                                  'El email no esta registrado');
+                            } else {
+                              NotificationService.showSSnackbar(errorMessage);
+                            }
                           }
                           loginForm.isLoading = false;
                         },

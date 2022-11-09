@@ -12,6 +12,7 @@ import 'package:lector_qr/screens/product_screen.dart';
 import 'package:lector_qr/screens/register_screen.dart';
 import 'package:lector_qr/screens/settingsScreens.dart';
 import 'package:lector_qr/services/auth_service.dart';
+import 'package:lector_qr/services/notification_service.dart';
 import 'package:lector_qr/services/products_service.dart';
 import 'package:lector_qr/share_preferences/preferences.dart';
 import 'package:provider/provider.dart';
@@ -46,10 +47,12 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'QA Reader',
-        initialRoute: 'checking',
+        initialRoute: 'login',
+        //Sirve para anclar el mensaje de error al hacer login
+        scaffoldMessengerKey: NotificationService.messengerKey,
         routes: {
           'home': (_) => const HomePage(),
-          'register': (_) => RegisterScreen(),
+          'register': (_) => const RegisterScreen(),
           'mapa': (_) => MapaPage(),
           'theme': (_) => const ThemePage(),
           SettingsScreen.routerName: (_) => SettingsScreen(),

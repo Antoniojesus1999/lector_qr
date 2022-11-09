@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:lector_qr/models/bici_model.dart';
 import 'package:http/http.dart' as http;
 
@@ -10,6 +11,9 @@ class ProductsService extends ChangeNotifier {
   final List<Bici> bicis = [];
   Bici? selectedBici;
   bool isLoading = true;
+
+  final storage = const FlutterSecureStorage();
+
   bool isSaving = false;
   File? newPictureFile;
 
@@ -20,7 +24,8 @@ class ProductsService extends ChangeNotifier {
   Future<List<Bici>> loadProduct() async {
     isLoading = true;
     notifyListeners();
-    final url = Uri.https(_baseUrl, '/bicis.json');
+    final url = Uri.https(_baseUrl, '/bicis.json',
+        {'auth': await storage.read(key: 'token') ?? ''});
     final resp = await http.get(url);
 
     final Map<String, dynamic> bicisMap = json.decode(resp.body);
@@ -48,7 +53,8 @@ class ProductsService extends ChangeNotifier {
   }
 
   Future<String> updateProduct(Bici bici) async {
-    final url = Uri.https(_baseUrl, '/bicis/${bici.id}.json');
+    final url = Uri.https(_baseUrl, '/bicis/${bici.id}.json',
+        {'auth': await storage.read(key: 'token') ?? ''});
     final resp = await http.put(url, body: bici.toJson());
     final decodedData = resp.body;
 
@@ -64,7 +70,8 @@ class ProductsService extends ChangeNotifier {
   }
 
   Future<String> createProduct(Bici bici) async {
-    final url = Uri.https(_baseUrl, '/bicis.json');
+    final url = Uri.https(_baseUrl, '/bicis.json',
+        {'auth': await storage.read(key: 'token') ?? ''});
     final resp = await http.post(url, body: bici.toJson());
     final decodedData = json.decode(resp.body);
     bici.id = decodedData['name'];
