@@ -5,6 +5,8 @@ import 'package:lector_qr/widgets/card_container.dart';
 import 'package:lector_qr/widgets/outh_background.dart';
 import 'package:provider/provider.dart';
 
+import '../services/auth_service.dart';
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
@@ -108,11 +110,19 @@ class _LoginForm extends StatelessWidget {
                       ? null
                       : () async {
                           FocusScope.of(context).unfocus();
+                          final authService =
+                              Provider.of<AuthService>(context, listen: false);
                           if (!loginForm.isValidForm()) return;
                           loginForm.isLoading = true;
-                          await Future.delayed(const Duration(seconds: 2));
+                          final String? errorMessage = await authService.login(
+                              loginForm.email, loginForm.password);
+                          if (errorMessage == null) {
+                            // ignore: use_build_context_synchronously
+                            Navigator.pushReplacementNamed(context, 'home');
+                          } else {
+                            print(errorMessage);
+                          }
                           loginForm.isLoading = false;
-                          Navigator.pushReplacementNamed(context, 'home');
                         },
                   child: Container(
                     padding: const EdgeInsets.symmetric(
