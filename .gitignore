@@ -48,3 +48,6 @@ app.*.map.json
 /android/app/release
 .idea/workspace.xml
 .idea/workspace.xml
+
+key.properties
+key.jks

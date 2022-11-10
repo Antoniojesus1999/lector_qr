@@ -11,7 +11,15 @@ class SideMenu extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          _DrawerHeader(),
+          const _DrawerHeader(),
+          ListTile(
+            leading: const Icon(Icons.shop),
+            title: const Text('Tienda'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, 'productos');
+            },
+          ),
           ListTile(
             leading: const Icon(Icons.pages_outlined),
             title: const Text('Settings Teme'),

@@ -18,12 +18,17 @@ class ProductPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Productos'),
-        leading: IconButton(
-            onPressed: () {
-              authService.logout();
-              Navigator.pushReplacementNamed(context, 'login');
-            },
-            icon: const Icon(Icons.login_outlined)),
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: IconButton(
+                onPressed: () {
+                  authService.logout();
+                  Navigator.pushReplacementNamed(context, 'login');
+                },
+                icon: const Icon(Icons.login_outlined)),
+          )
+        ],
       ),
       body: ListView.builder(
           itemCount: productsService.bicis.length,
