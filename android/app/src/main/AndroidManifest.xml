@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ajpv.lector_qr">
+    package="com.example.lector_qr">
    <application
-        android:label="Lector QR"
+        android:label="lector_qr"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <meta-data android:name="com.google.android.geo.API_KEY"
